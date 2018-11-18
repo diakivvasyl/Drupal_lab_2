@@ -1,0 +1,44 @@
+@import "var";
+
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	max-width: 1250px;
+	margin: 0 auto;
+	font-size: 14px;
+}
+
+.header-text {
+	h1 {
+		text-align: center;
+		font-family: $lobsterFont;
+		margin-bottom: 32px;
+		color: $colorheader;
+	}
+}
+i {
+	margin-left : 25%;
+}
+
+p, button, input {
+	font-family : $MerriweatherFont;
+}
+
+a {
+	font-family : $lobsterFont;
+	color: $blueColor;
+	&:hover{
+		color: $blueColor;
+	}
+}
+#result {
+	a {
+		font-size: 18px;
+	}
+}
+
+.searchForm {
+	margin : 35px 0;
+}

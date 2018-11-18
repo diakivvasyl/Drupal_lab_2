@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>WikipediaApp</title>
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script src="js/main.js"></script>
+	<script src="https://use.fontawesome.com/2b83809fc3.js"></script>
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Lobster+Two|Merriweather&amp;subset=cyrillic" rel="stylesheet">
+</head>
+
+<body>
+	<div class="container">
+		<div class="header-text">
+			<h1>Wikipedia API Search</h1>
+		</div>
+		<div class="row ">
+			<div class="col-lg-2 col-lg-offset-5 ">
+				<a href="https://en.wikipedia.org/wiki/Special:Random" target="blank">
+					<i class="fa fa-wikipedia-w fa-5x" aria-hidden="true"></i>
+				</a>
+				<hr>
+			</div>
+		</div>
+		<div class="row searchForm">
+			<div class="col-lg-3 col-lg-offset-3 ">
+				<input type="text" class="form-control" id="searchForm">
+			</div>
+			<div class="col-lg-2 col-lg-offset-1 ">
+				<button class="btn btn-primary" id="search-btn">Search</button>
+			</div>
+		</div>
+		<hr>
+		<div class="row">
+			<div class="col-lg-8 col-lg-offset-2">
+				<ul id="result">
+
+				</ul>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

@@ -1,19 +1,13 @@
-
-<h2>How to use OptimizedHTML</h2>
+<h2>How to deploy this wesite</h2>
 
 <ol>
 	<li>Clone repository in to project folder: git clone [repository-url].</li>
-	<li>Install Node Modules: <strong>npm i</strong>;</li>
-	<li>Run the template: <strong>gulp</strong>.</li>
+	<li>Install Node Modules: <strong>npm i gulp -g</strong>;</li>
+	<li>Run this in command line: <strong>npm i gulp --save-dev <br> npm i gulp-sass --save-dev</strong>.</li>
 </ol>
 
 <h2>Gulp tasks:</h2>
 
 <ul>
-	<li><strong>gulp</strong>: run default gulp task (sass, js, watch, browserSync) for web development;</li>
-	<li><strong>build</strong>: build project to <strong>dist</strong> folder (cleanup, image optimize, removing unnecessary files);</li>
-	<li><strong>deploy</strong>: project deployment on the server from <strong>dist</strong> folder via <strong>FTP</strong>;</li>
-	<li><strong>rsync</strong>: project deployment on the server from <strong>dist</strong> folder via <strong>RSYNC</strong>;</li>
-	<li><strong>clearcache</strong>: clear all gulp cache.</li>
+	<li><strong>sass</strong>: run gulp task for create css file;</li>
 </ul>
-

@@ -2,6 +2,7 @@
 <meta charset='utf-8'>
 <html>
 <head>
+    <title>Task 2</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
@@ -20,15 +21,15 @@
 echo '<br>';
 echo '<div class="container">';
 echo '<br>';
-echo '<h3> Введіть число </h3>';
-echo '<form action="index.php" method="post">
+echo '<h3> Enter a number </h3>';
+echo '<form action="/?file=task2.php" method="post">
 <label for="catFirst">catFirst</label>
      <input type="number" name="catFirst">
      <label for="catSec">catSec</label>
      <input type="number" name="catSec">
      <label for="hypo">hypo</label>
      <input type="number" name="hypo"> 
-     <input type="submit">
+     <input type="submit" value="Send">
      </form>';
 
 function pythagoras($catFirst=2, $catSec=4, $hypo=false, $precision=2)

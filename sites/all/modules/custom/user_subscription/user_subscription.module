@@ -1,0 +1,86 @@
+<?php
+
+/**
+ * Implements hook_menu().
+ */
+function user_subscription_menu() {
+  $items = [];
+  $items['admin/config/content/user_subscription'] = array(
+    'title' => 'Current posts',
+    'description' => 'Configuration for Current posts module',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('user_subscription_form'),
+    'access arguments' => array('access administration pages'),
+    'type' => MENU_NORMAL_ITEM,
+  );
+
+  return $items;
+}
+
+
+/**
+ * @param $form
+ * @param $form_state
+ *
+ * @return mixed
+ */
+function user_subscription_form($form, &$form_state) {
+  $form['machine_name'] = [
+    '#type' => 'machine_name',
+    '#default_value' => 'user_subscription_module',
+    '#maxlength' => 32,
+    '#machine_name' => [
+      'exists' => 'form_validate_machine_name',
+    ],
+  ];
+  $form['email'] = [
+    '#type' => 'textfield',
+    '#required' => 'TRUE',
+    '#title' => t('Your email'),
+    '#default_value' => variable_get('email'),
+  ];
+  $form['trial'] = [
+    '#type' => 'checkbox',
+    '#title' => t('Trial'),
+    '#default_value' => variable_get('trial', TRUE),
+  ];
+  $form['need'] = [
+    '#type' => 'checkboxes',
+    '#required' => 'TRUE',
+    '#title' => format_string('Why you need subscription?'),
+    '#default_value' => variable_get('need', 1),
+    '#options' => [
+      1 => t('Capture the world'),
+      2 => t('bring back to Communism'),
+      3 => t('Make America great again'),
+      ],
+  ];
+  $form['type'] = [
+    '#type' => 'select',
+    '#required' => 'TRUE',
+    '#title' => t('Subscription type'),
+    '#default_value' => variable_get('type'),
+    '#options' => [
+      'one_month' => t('One month'),
+      'six_month' => t('Six month'),
+      'one_year' => t('One year'),
+    ],
+  ];
+  $form['comment'] = [
+    '#type' => 'textarea',
+    '#title' => t('Your comment'),
+    '#default_value' => variable_get('comment'),
+  ];
+
+  return system_settings_form($form);
+}
+
+function user_subscription_form_validate($form, &$form_state) {
+  // Validate the e-mail address.
+  if ($error = user_validate_mail($form_state['values']['email'])) {
+    form_set_error('email', $error);
+  }
+  if (preg_match('/[0-9]/', $form_state['values']['comment'])) {
+    form_set_error('comment', t('Your comment contain numbers'));
+  }
+}

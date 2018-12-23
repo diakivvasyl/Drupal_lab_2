@@ -9,7 +9,7 @@ function drupal_lab_bartik_subtheme_library()
     $libraries['ziehharmonika'] = [
         'title' => 'Ziehharmonika',
         'website' => 'https://github.com/Arcwise/ziehharmonika',
-        'version' => 'alpha3',
+        'version' => '1.0',
         'js' => [
             'sites/all/libraries/ziehharmonika/src/ziehharmonika.js' => [],
         ],

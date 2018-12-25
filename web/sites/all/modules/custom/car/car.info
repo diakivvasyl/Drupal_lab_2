@@ -1,0 +1,4 @@
+name = Car
+description = The module of creating Car entity for Drupal lab 2.
+core = 7.x
+package = Custom

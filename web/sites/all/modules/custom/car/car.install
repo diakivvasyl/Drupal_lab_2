@@ -1,0 +1,45 @@
+<?php
+
+/**
+ * Implements hook_schema().
+ */
+function car_schema() {
+  $schema['cars'] = [
+    'description' => 'The base table to database for cars.',
+    'fields' => [
+      'cid' => [
+        'description' => 'Identifier for cars.',
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ],
+      'model' => [
+        'description' => 'Model of the car.',
+        'type' => 'varchar',
+        'length' => 80,
+        'not null' => TRUE,
+        'default' => '',
+      ],
+      'year' => [
+        'description' => 'Year of the car.',
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+      'mileage' => [
+        'description' => 'Mileage of the car.',
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+      'price' => [
+        'description' => 'Price of the car.',
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+    ],
+    'primary key' => ['cid'],
+  ];
+  return $schema;
+}

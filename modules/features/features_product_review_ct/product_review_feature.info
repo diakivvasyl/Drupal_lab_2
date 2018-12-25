@@ -1,0 +1,17 @@
+name = Product review feature
+description = Contain set functional for add content type Product review.
+core = 7.x
+package = Features
+version = 7.x-1.0
+dependencies[] = entityreference
+dependencies[] = features
+dependencies[] = image
+dependencies[] = text
+features[features_api][] = api:2
+features[field_base][] = body
+features[field_base][] = field_image_review
+features[field_base][] = field_product
+features[field_instance][] = node-product_review-body
+features[field_instance][] = node-product_review-field_image_review
+features[field_instance][] = node-product_review-field_product
+features[node][] = product_review

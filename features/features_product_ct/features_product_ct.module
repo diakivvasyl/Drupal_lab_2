@@ -1,8 +1,0 @@
-<?php
-
-/**
- * @file
- * Code for the Content type Product feature.
- */
-
-include_once 'features_product_ct.features.inc';
